@@ -1,6 +1,13 @@
+import { useContext } from "react"
+import { LoginContext } from "../helpers/LoginContext"
+
 function MusicCard(){
+
+    const {loggedIn} = useContext(LoginContext)
     return (
-        <div></div>
+        <div>
+            <button onClick={() => {console.log(loggedIn)}}></button>
+        </div>
     )
 }
 
