@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/songfy/static/css/main.3d712d91.css",
+    "main.js": "/songfy/static/js/main.79c16936.js",
+    "static/js/453.ee457176.chunk.js": "/songfy/static/js/453.ee457176.chunk.js",
+    "static/media/Capture3.png": "/songfy/static/media/Capture3.9edf23b560e0bc140857.png",
+    "static/media/Capture4.png": "/songfy/static/media/Capture4.7459f992b33d72b9fe97.png",
+    "static/media/Capture.png": "/songfy/static/media/Capture.4942a914ffb40795832b.png",
+    "static/media/Capture2.png": "/songfy/static/media/Capture2.a9c0adaf260af9f9e9d1.png",
+    "index.html": "/songfy/index.html",
+    "main.3d712d91.css.map": "/songfy/static/css/main.3d712d91.css.map",
+    "main.79c16936.js.map": "/songfy/static/js/main.79c16936.js.map",
+    "453.ee457176.chunk.js.map": "/songfy/static/js/453.ee457176.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3d712d91.css",
+    "static/js/main.79c16936.js"
+  ]
+}
