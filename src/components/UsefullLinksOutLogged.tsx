@@ -5,7 +5,7 @@ import { CiFacebook } from "react-icons/ci";
 const UsefullLinksOutLogged = () => {
     const linkOver = "hover:text-white hover:underline hover:cursor-pointer"
   return (
-    <div className="flex pt-24 text-md justify-between">
+    <div className="flex pt-24 text-md pb-8 justify-between">
       <div className="flex gap-16">
         <div className="gap-2 flex flex-col">
           <h2 className="text-white font-bold">Empresa</h2>
