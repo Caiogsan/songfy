@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 
 const FooterOutLogged = () => {
     return (
@@ -6,9 +7,9 @@ const FooterOutLogged = () => {
             <h2 className="text-sm  font-bold">Testar o premium de graça</h2>
             <h1>Inscreva-se para curtir música ilimitada e podcasts só com alguns anúncios. Não precisa de cartão de crédito.</h1>
             </div>
-            <button className="bg-white hover:scale-105 h-12 px-8 font-bold rounded-full text-black">
+            <Link to={"/songfy/register"}><button className="bg-white hover:scale-105 duration-200 h-12 px-8 font-bold rounded-full text-black">
                 Inscreva-se grátis
-              </button>
+              </button></Link>
         </div>
     )
 }

@@ -2,12 +2,20 @@ import { IoMdHome, IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
 import { IoSearch } from "react-icons/io5";
 import { ImBooks } from "react-icons/im";
 import { FaPlus, FaArrowRight } from "react-icons/fa6";
-
+import playlist1 from "../assets/Capture.png";
+import playlist2 from "../assets/Capture2.png";
+import playlist3 from "../assets/Capture3.png";
+import playlist4 from "../assets/Capture4.png";
+import playlist5 from "../assets/album1.png";
+import playlist6 from "../assets/album2.png";
+import playlist7 from "../assets/album3.png";
+import playlist8 from "../assets/album4.png";
 import YourPlaylists from "../components/YourPlaylists";
 import YourPodcast from "../components/YourPodcast";
 import MusicLine from "../components/MusicLine";
 import FooterOutLogged from "../components/FooterOutLogged";
 import UsefullLinksOutLogged from "../components/UsefullLinksOutLogged";
+import { Link } from "react-router-dom";
 
 function LoggedOut() {
   return (
@@ -58,17 +66,51 @@ function LoggedOut() {
               </div>
             </div>
             <div className="flex gap-8">
-              <button className="hover:scale-105 hover:text-white">
-                Inscrever-se
-              </button>
-              <button className="bg-white hover:scale-105 h-full w-24 rounded-full text-black">
-                Entrar
-              </button>
+              <Link to={"/songfy/register"} className="flex items-center">
+                <button className="hover:scale-105 hover:text-white">
+                  Inscrever-se
+                </button>
+              </Link>
+              <Link to={"/songfy/login"}>
+                <button className="bg-white hover:scale-105 h-full w-24 rounded-full text-black">
+                  Entrar
+                </button>
+              </Link>
             </div>
           </div>
           <div className="mx-4">
-          <MusicLine title="Playlists do Songfy" />
-          <UsefullLinksOutLogged />
+            <MusicLine
+              description1="chill beats, lofi vibes, new tracks every week..."
+              description2="Dua Lipa is on top of the Hottest 50!"
+              description3="Just lean back and enjoy relaxed beats"
+              description4="The biggest songs of the 2020s"
+              songTitle1="lofi beats"
+              songTitle2="Today's Top Hits"
+              songTitle3="Chillout Lounge"
+              songTitle4="All out 2020s"
+              image1={playlist1}
+              image2={playlist2}
+              image3={playlist3}
+              image4={playlist4}
+              title="Playlists do Songfy"
+            />
+            <MusicLine
+              description1="Morgan Wallen"
+              description2="Y$, Kanye West, Ty Dolla $ign"
+              description3="Travis Scott"
+              description4="SZA"
+              songTitle1="One Thing At A Time"
+              songTitle2="VULTURES 1"
+              songTitle3="UTOPIA"
+              songTitle4="SOS"
+              image1={playlist5}
+              image2={playlist6}
+              image3={playlist7}
+              image4={playlist8}
+              title="Álbuns populares"
+            />
+
+            <UsefullLinksOutLogged />
           </div>
         </div>
       </div>
