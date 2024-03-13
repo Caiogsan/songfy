@@ -7,16 +7,15 @@ import LoggedInHome from "./pages/LoggedInHome";
 import { LoginContext } from "./helpers/LoginContext";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
-
-interface LoginContextValue {
-  loggedIn: boolean;
-}
+import { Users } from "./data/UsersData";
+import { User } from "./helpers/LoginContext";
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
 
+  const [user, setUser] = useState<User | null>(null);
   return (
-    <LoginContext.Provider value={{ loggedIn }}>
+    <LoginContext.Provider value={{ loggedIn, user, setUser}}>
       <Router>
         <Routes>
           <Route
