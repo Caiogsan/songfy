@@ -16,6 +16,7 @@ import MusicLine from "../components/MusicLine";
 import FooterOutLogged from "../components/FooterOutLogged";
 import UsefullLinksOutLogged from "../components/UsefullLinksOutLogged";
 import { Link } from "react-router-dom";
+import UnloggedHeader from "../components/UnloggedHeader";
 
 function LoggedOut() {
   return (
@@ -56,30 +57,17 @@ function LoggedOut() {
           </div>
         </div>
         <div className="w-[72%] overflow-y-scroll bg-gradient-to-b from-neutral-800 to-neutral-900 rounded-md ">
-          <div className="flex justify-between rounded-t-md h-16 bg-neutral-900 p-3">
-            <div className="flex text-2xl justify-center items-center gap-4">
-              <div className="h-9 w-9 hover:cursor-not-allowed bg-neutral-950 rounded-full flex items-center justify-center">
-                <IoIosArrowBack className="" />
-              </div>
-              <div className="h-9 w-9 hover:cursor-not-allowed bg-neutral-950 rounded-full flex items-center justify-center">
-                <IoIosArrowForward className="" />
-              </div>
-            </div>
-            <div className="flex gap-8">
-              <Link to={"/songfy/register"} className="flex items-center">
-                <button className="hover:scale-105 hover:text-white">
-                  Inscrever-se
-                </button>
-              </Link>
-              <Link to={"/songfy/login"}>
-                <button className="bg-white hover:scale-105 h-full w-24 rounded-full text-black">
-                  Entrar
-                </button>
-              </Link>
-            </div>
-          </div>
+          <UnloggedHeader />
           <div className="mx-4">
             <MusicLine
+            id1={1}
+            id2={2}
+            id3={3}
+            id4={4}
+              viewAlbum1="lofi_beats"
+              viewAlbum2="lofi_beats"
+              viewAlbum3="chillout"
+              viewAlbum4="allout"
               description1="chill beats, lofi vibes, new tracks every week..."
               description2="Dua Lipa is on top of the Hottest 50!"
               description3="Just lean back and enjoy relaxed beats"
@@ -95,6 +83,14 @@ function LoggedOut() {
               title="Playlists do Songfy"
             />
             <MusicLine
+            id1={5}
+            id2={6}
+            id3={7}
+            id4={8}
+              viewAlbum1="lofi_beats"
+              viewAlbum2="top_hits"
+              viewAlbum3="chillout"
+              viewAlbum4="allout"
               description1="Morgan Wallen"
               description2="Y$, Kanye West, Ty Dolla $ign"
               description3="Travis Scott"
