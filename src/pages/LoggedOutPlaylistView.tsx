@@ -9,11 +9,15 @@ import { Link } from "react-router-dom";
 import { Album, Albuns, Musics } from "../data/MusicsData";
 import { Music } from "../data/MusicsData";
 import UnloggedHeader from "../components/UnloggedHeader";
-import lofi from "../assets/Capture.png"
-import teste from "../assets/Capture2.png"
+import lofi from "../assets/Capture.png";
+import topHits from "../assets/Capture2.png";
+import chilloutLounge from "../assets/Capture3.png";
+import allOut from "../assets/Capture4.png";
 import MusicCard from "../components/MusicCard";
-import { useContext } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { LoginContext } from "../helpers/LoginContext";
+import SmallPoint from "../components/SmallPoint";
+import { InfinitySpin } from "react-loader-spinner";
 
 interface PlalistViewProps {
   id: number;
@@ -22,13 +26,38 @@ interface PlalistViewProps {
 const LoggedOutPlaylistView: React.FC<PlalistViewProps> = ({
   id,
 }): JSX.Element => {
-  const { idSong } = useContext(LoginContext)
+  const { idSong } = useContext(LoginContext);
   const musicInstance = new Musics();
   const musicData: Music[] = musicInstance.lofi_beats;
   const thisMusic: Music = musicData.filter((element) => element.id == id)[0];
   const albumInstance = new Albuns();
   const albumData: Album[] = albumInstance.allAlbuns;
-  const thisAlbum: Album = albumData.filter((element) => element.id == idSong)[0];
+  const thisAlbum: Album = albumData.filter(
+    (element) => element.id == idSong
+  )[0];
+  const [image, setImage] = useState<string>("");
+  const chooseImage = () => {
+    switch (thisAlbum.id) {
+      case 1:
+        setImage(lofi);
+        break;
+      case 2:
+        setImage(topHits);
+        break;
+      case 3:
+        setImage(chilloutLounge);
+        break;
+        case 4:
+        setImage(allOut);
+        break;
+      default:
+        setImage("");
+    }
+  };
+  useEffect(() => {
+    chooseImage();
+  }, []);
+
   switch (id) {
     case 1:
       return (
@@ -44,7 +73,7 @@ const LoggedOutPlaylistView: React.FC<PlalistViewProps> = ({
                   onClick={() => {
                     console.log(thisMusic);
                     console.log(thisAlbum);
-                    console.log(idSong)
+                    console.log(idSong);
                   }}
                   className="flex hover:text-white duration-500 items-center gap-5 w-[90%]"
                 >
@@ -78,19 +107,40 @@ const LoggedOutPlaylistView: React.FC<PlalistViewProps> = ({
             <div className="w-[72%] overflow-y-scroll bg-gradient-to-b from-neutral-800 to-neutral-900 rounded-md ">
               <UnloggedHeader />
               <div className="flex text-white gap-5 p-5 justify-start">
-                  <img className="h-48 rounded-md" src={thisAlbum.name == "lofi beats" ? lofi : teste}></img>
-                  <div className="flex flex-col justify-end gap-[2px]">
-                    <p className="text-xs font-bold">Playlist</p>
-                    <h1 className="text-7xl font-bold pb-3">{thisAlbum.name}</h1>
-                    <h3 className="text-neutral-500 text-sm">{thisAlbum.description}</h3>
-                    <div className="flex gap-2 items-center h-5 text-sm text-center">
-                      <h2>Songfy</h2>
-                      <div className="bg-white rounded-full h-[3px] w-[3px] items-center"></div>
-                      <h3>{thisAlbum.howManyLikes}</h3>
-                      <h3>{thisAlbum.howManyMusics}</h3>
-                      <h3>{thisAlbum.duration}</h3>
-                    </div>
+                {image ? (
+                  <img
+                    className="h-48 rounded-md w-48"
+                    src={image}
+                    alt="logo"
+                  ></img>
+                ) : (
+                  <div className="flex h-48 rounded-md w-48 items-center justify-center">
+                    <InfinitySpin width="200" color="#4fa94d" />
                   </div>
+                )}
+                <div className="flex flex-col justify-end gap-[2px]">
+                  <p
+                    className="text-xs font-bold"
+                    onClick={() => {
+                      console.log(image);
+                    }}
+                  >
+                    Playlist
+                  </p>
+                  <h1 className="text-7xl font-bold pb-3">{thisAlbum.name}</h1>
+                  <h3 className="text-neutral-500 text-sm">
+                    {thisAlbum.description}
+                  </h3>
+                  <div className="flex gap-2 items-center h-5 text-sm text-center">
+                    <h2>Songfy</h2>
+                    <SmallPoint></SmallPoint>
+                    <h3>{thisAlbum.howManyLikes}</h3>
+                    <SmallPoint></SmallPoint>
+                    <h3>{thisAlbum.howManyMusics},</h3>
+
+                    <h3 className="text-neutral-500">{thisAlbum.duration}</h3>
+                  </div>
+                </div>
               </div>
               <div></div>
             </div>

@@ -64,10 +64,10 @@ function LoggedOut() {
             id2={2}
             id3={3}
             id4={4}
-              viewAlbum1="lofi_beats"
-              viewAlbum2="lofi_beats"
-              viewAlbum3="chillout"
-              viewAlbum4="allout"
+              viewAlbum1="album"
+              viewAlbum2="album"
+              viewAlbum3="album"
+              viewAlbum4="album"
               description1="chill beats, lofi vibes, new tracks every week..."
               description2="Dua Lipa is on top of the Hottest 50!"
               description3="Just lean back and enjoy relaxed beats"

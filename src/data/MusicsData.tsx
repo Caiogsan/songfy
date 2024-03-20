@@ -37,7 +37,9 @@ export class Album {
  export class Albuns {
     allAlbuns: Album[] = [
         new Album("lofi beats", "chill beats, lofi vibes, new tracks every week...", "5.263.196 curtidas", "750 músicas", "mais de 24h", 1),
-        new Album("testeeee", "chill beats, lofi vibes, new tracks every week...", "5.263.196 curtidas", "750 músicas", "mais de 24h", 2)
+        new Album("Today's Top Hits", "Dua Lipa is on top of the Hottest 50!", "34.645.196 curtidas", "50 músicas", "cerca de 2h 30min", 2),
+        new Album("Chillout Lounge", "Just lean back and enjoy relaxed beats", "1.898.354 curtidas", "100 músicas", "cerca de 4h 30min", 3),
+        new Album("All Out 2020s", "The biggest songs of the 2020s", "102.130 curtidas", "150 músicas", "cerca de 7h", 4)
     ]
 }
 

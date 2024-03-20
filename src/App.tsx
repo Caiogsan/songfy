@@ -25,7 +25,7 @@ const [idSong, setIdSong] = useState<number>(0)
           ></Route>
           <Route path="/songfy/register" element={<Register />}></Route>
           <Route path="/songfy/login" element={<Login />}></Route>
-          <Route path="/songfy/lofi_beats" element={<LoggedOutPlaylistView id={1} />}></Route>
+          <Route path="/songfy/album" element={<LoggedOutPlaylistView id={1} />}></Route>
         </Routes>
       </Router>
     </LoginContext.Provider>
