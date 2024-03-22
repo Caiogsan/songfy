@@ -5,14 +5,16 @@ export class Music {
    addHowLongAgo: string
    duration : string
    id: number
+   musicLocation: number
 
-   constructor(name:string, singer:string, album:string, addHowLongAgo:string, duration:string, id:number){
+   constructor(name:string, singer:string, album:string, addHowLongAgo:string, duration:string, id:number, musicLocation:number){
     this.name = name
     this.singer = singer
     this.album = album
     this.addHowLongAgo = addHowLongAgo
     this.duration = duration
     this.id = id
+    this.musicLocation = musicLocation
    }
 }
 
@@ -44,9 +46,12 @@ export class Album {
 }
 
 export class Musics {
-    lofi_beats: Music[] = [
-        new Music("lofi beats", "Collinsworthy", "camping trip", "Há 6 dias", "2:39", 1),
-        new Music("Camping trip", "Collinsworthy", "camping trip", "Há 6 dias", "2:39", 2),
-        new Music("Water Flow", "MrAnthony, Dani Catalá, Banks", "Water Flow", "Há 6 dias", "2:34", 3)
+    allMusics: Music[] = [
+        new Music("reading", "herbstreit", "reading", "Há 1 semana", "2:41", 1, 1),
+        new Music("Camping trip", "Collinsworthy", "camping trip", "Há 6 dias", "2:39", 1, 2),
+        new Music("Water Flow", "MrAnthony, Dani Catalá, Banks", "Water Flow", "Há 6 dias", "2:34", 1, 3),
+        new Music("Betino", "AHNAMUSICA, DJ MR GOSHI2", "Betino", "Há 6 dias", "2:08", 1, 4),
+        new Music("Nightshade", "Blue Wednesday", "Nightshade", "Há 1 semana", "2:37", 1, 5),
+        new Music("Laundry Tessomancy", "Violet Blanca", "Laundry Tessomancy", "Há 1 semana", "2:01", 1, 6)
     ]
 }

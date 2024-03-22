@@ -53,7 +53,7 @@ const Login = (): JSX.Element => {
           <p className="text-sm">
             Não tem uma conta?{" "}
             <span className="underline hover:cursor-pointer">
-              Inscrever-se no Songfy{" "}
+              <Link to={"/songfy/register"}>Inscrever-se no Songfy{" "}</Link>
             </span>
           </p>
         </div>
