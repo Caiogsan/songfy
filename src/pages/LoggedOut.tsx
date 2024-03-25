@@ -57,10 +57,7 @@ function LoggedOut() {
             id2={2}
             id3={3}
             id4={4}
-              viewAlbum1="album"
-              viewAlbum2="album"
-              viewAlbum3="album"
-              viewAlbum4="album"
+             
               description1="chill beats, lofi vibes, new tracks every week..."
               description2="Dua Lipa is on top of the Hottest 50!"
               description3="Just lean back and enjoy relaxed beats"
@@ -80,10 +77,7 @@ function LoggedOut() {
             id2={6}
             id3={7}
             id4={8}
-              viewAlbum1="lofi_beats"
-              viewAlbum2="top_hits"
-              viewAlbum3="chillout"
-              viewAlbum4="allout"
+              
               description1="Morgan Wallen"
               description2="Y$, Kanye West, Ty Dolla $ign"
               description3="Travis Scott"

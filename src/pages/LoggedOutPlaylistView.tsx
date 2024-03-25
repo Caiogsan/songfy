@@ -13,7 +13,10 @@ import lofi from "../assets/Capture.png";
 import topHits from "../assets/Capture2.png";
 import chilloutLounge from "../assets/Capture3.png";
 import allOut from "../assets/Capture4.png";
-import MusicCard from "../components/MusicCard";
+import oneThingAtATime from "../assets/album1.png";
+import vultures from "../assets/album2.png";
+import utopia from "../assets/album3.png";
+import sos from "../assets/album4.png";
 import { useContext, useEffect, useRef, useState } from "react";
 import { LoginContext } from "../helpers/LoginContext";
 import SmallPoint from "../components/SmallPoint";
@@ -33,13 +36,13 @@ const LoggedOutPlaylistView: React.FC<PlalistViewProps> = ({
 }): JSX.Element => {
   const { idSong } = useContext(LoginContext);
   const musicInstance = new Musics();
-  
+
   const albumInstance = new Albuns();
   const albumData: Album[] = albumInstance.allAlbuns;
   const thisAlbum: Album = albumData.filter(
     (element) => element.id == idSong
   )[0];
-  
+
   const [image, setImage] = useState<string>("");
   const chooseImage = () => {
     switch (thisAlbum.id) {
@@ -55,6 +58,18 @@ const LoggedOutPlaylistView: React.FC<PlalistViewProps> = ({
       case 4:
         setImage(allOut);
         break;
+      case 5:
+        setImage(oneThingAtATime);
+        break;
+      case 6:
+        setImage(vultures);
+        break;
+      case 7:
+        setImage(utopia);
+        break;
+      case 8:
+        setImage(sos);
+        break;
       default:
         setImage("");
     }
@@ -62,7 +77,9 @@ const LoggedOutPlaylistView: React.FC<PlalistViewProps> = ({
   useEffect(() => {
     chooseImage();
   }, []);
-  const musicData = musicInstance.allMusics.filter((music) => music.id === thisAlbum.id);
+  const musicData = musicInstance.allMusics.filter(
+    (music) => music.id === thisAlbum.id
+  );
   return (
     <div className="text-gray-400 flex flex-col gap-3 bg-black h-full py-[11.7px] px-2 ">
       <div className="flex gap-2 h-[580px]">
@@ -75,14 +92,18 @@ const LoggedOutPlaylistView: React.FC<PlalistViewProps> = ({
                 <h1>Sua Biblioteca</h1>
               </div>
               <div className="flex w-[50%] justify-end items-center gap-6">
-                <Link to={"/songfy/register"}><FaPlus
-                  title="Criar playlist ou pasta"
-                  className="text-lg hover:cursor-pointer hover:bg-neutral-800 hover:rounded-full duration-500 hover:p-2"
-                /></Link>
-                <Link to={"/songfy/register"}><FaArrowRight
-                  title="Mostrar mais"
-                  className="text-lg hover:cursor-pointer hover:bg-neutral-800 hover:rounded-full duration-500 hover:p-2"
-                /></Link>
+                <Link to={"/songfy/register"}>
+                  <FaPlus
+                    title="Criar playlist ou pasta"
+                    className="text-lg hover:cursor-pointer hover:bg-neutral-800 hover:rounded-full duration-500 hover:p-2"
+                  />
+                </Link>
+                <Link to={"/songfy/register"}>
+                  <FaArrowRight
+                    title="Mostrar mais"
+                    className="text-lg hover:cursor-pointer hover:bg-neutral-800 hover:rounded-full duration-500 hover:p-2"
+                  />
+                </Link>
               </div>
             </div>
             <div className="flex flex-col gap-2 ">
@@ -166,10 +187,17 @@ const LoggedOutPlaylistView: React.FC<PlalistViewProps> = ({
               <p className="w-[20%]">Adicionada em</p>
               <p className="w-[10%]">Duração</p>
             </div>
-            <div className="border-b-[1px] border-neutral-600 opacity-50 mt-2 mb-4"></div>
-            <div className="flex flex-col gap-4 ">
+            <div className="border-b-[1px] border-neutral-600 opacity-50 mt-2"></div>
+            <div className="flex flex-col gap-4  my-4">
               {musicData.map((element) => (
-                <MusicDescriptionAlbum addWhen={element.addHowLongAgo} durationMusic={element.duration} nameAlbum={element.album} nameMusic={element.name} authorMusic={element.singer} id={element.musicLocation}></MusicDescriptionAlbum>
+                <MusicDescriptionAlbum
+                  addWhen={element.addHowLongAgo}
+                  durationMusic={element.duration}
+                  nameAlbum={element.album}
+                  nameMusic={element.name}
+                  authorMusic={element.singer}
+                  id={element.musicLocation}
+                ></MusicDescriptionAlbum>
               ))}
             </div>
           </div>

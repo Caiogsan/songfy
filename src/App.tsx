@@ -13,10 +13,17 @@ import LoggedOutPlaylistView from "./pages/LoggedOutPlaylistView";
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
-const [idSong, setIdSong] = useState<number>(0)
+  let users = [{
+    email: "",
+    password: "",
+    name: ""
+  }];
+  const [idSong, setIdSong] = useState<number>(0);
   const [user, setUser] = useState<User | null>(null);
   return (
-    <LoginContext.Provider value={{ loggedIn, user, setUser, idSong, setIdSong}}>
+    <LoginContext.Provider
+      value={{ loggedIn, users, user, setUser, idSong, setIdSong }}
+    >
       <Router>
         <Routes>
           <Route
@@ -25,7 +32,10 @@ const [idSong, setIdSong] = useState<number>(0)
           ></Route>
           <Route path="/songfy/register" element={<Register />}></Route>
           <Route path="/songfy/login" element={<Login />}></Route>
-          <Route path="/songfy/album" element={<LoggedOutPlaylistView id={1} />}></Route>
+          <Route
+            path="/songfy/album"
+            element={<LoggedOutPlaylistView id={1} />}
+          ></Route>
         </Routes>
       </Router>
     </LoginContext.Provider>

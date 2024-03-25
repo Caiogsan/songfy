@@ -17,10 +17,6 @@ interface MusicLineProps {
   songTitle2: string;
   songTitle3: string;
   songTitle4: string;
-  viewAlbum1: string;
-  viewAlbum2: string;
-  viewAlbum3: string;
-  viewAlbum4: string;
   id1: number
   id2:number
   id3:number
@@ -37,10 +33,6 @@ const MusicLine: React.FC<MusicLineProps> = ({
   image2,
   image3,
   image4,
-  viewAlbum1,
-  viewAlbum2,
-  viewAlbum3,
-  viewAlbum4,
   description1,
   description2,
   description3,
@@ -50,7 +42,7 @@ const MusicLine: React.FC<MusicLineProps> = ({
   songTitle3,
   songTitle4,
 }) => {
-  
+  const viewAlbum = 'album'
   const { setIdSong } = useContext(LoginContext)
   return (
     <div className="mb-6">
@@ -59,7 +51,7 @@ const MusicLine: React.FC<MusicLineProps> = ({
         <p>Mostrar tudo</p>
       </div>
       <div className="flex justify-between ">
-        <Link onClick={() => {setIdSong(id1)}} to={viewAlbum1}>
+        <Link onClick={() => {setIdSong(id1)}} to={viewAlbum}>
           <MusicCard
          
             description={description1}
@@ -67,7 +59,7 @@ const MusicLine: React.FC<MusicLineProps> = ({
             imagePlaylist={image1}
           />
         </Link>
-        <Link onClick={() => {setIdSong(id2)}} to={viewAlbum2}>
+        <Link onClick={() => {setIdSong(id2)}} to={viewAlbum}>
           {" "}
           <MusicCard
           
@@ -76,7 +68,7 @@ const MusicLine: React.FC<MusicLineProps> = ({
             imagePlaylist={image2}
           />
         </Link>
-        <Link onClick={() => {setIdSong(id3)}} to={viewAlbum3}>
+        <Link onClick={() => {setIdSong(id3)}} to={viewAlbum}>
           <MusicCard
 
             description={description3}
@@ -84,7 +76,7 @@ const MusicLine: React.FC<MusicLineProps> = ({
             imagePlaylist={image3}
           />
         </Link>
-        <Link onClick={() => {setIdSong(id4)}} to={viewAlbum4}>
+        <Link onClick={() => {setIdSong(id4)}} to={viewAlbum}>
           <MusicCard
           
             description={description4}

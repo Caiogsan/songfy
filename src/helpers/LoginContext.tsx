@@ -12,6 +12,7 @@ interface LoginContextProps {
     setUser: React.Dispatch<React.SetStateAction<User | null>>;
     idSong: number
     setIdSong: React.Dispatch<React.SetStateAction<number>>
+    users: object[]
 
 }
 
@@ -20,5 +21,6 @@ export const LoginContext = createContext<LoginContextProps>({
     user: null,
     setUser: () => {},
     idSong: 0,
-    setIdSong: () => {}
+    setIdSong: () => {},
+    users: []
 })
