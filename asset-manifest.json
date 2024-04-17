@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/songfy/static/css/main.fabfe2f8.css",
-    "main.js": "/songfy/static/js/main.adfe6edd.js",
+    "main.css": "/songfy/static/css/main.7801f17e.css",
+    "main.js": "/songfy/static/js/main.76b59d60.js",
     "static/js/453.ee457176.chunk.js": "/songfy/static/js/453.ee457176.chunk.js",
     "static/media/album4.png": "/songfy/static/media/album4.28872721d88550aeac54.png",
     "static/media/Capture3.png": "/songfy/static/media/Capture3.9edf23b560e0bc140857.png",
@@ -12,12 +12,12 @@
     "static/media/album3.png": "/songfy/static/media/album3.6f22b64679d0b16fab4a.png",
     "static/media/album1.png": "/songfy/static/media/album1.a191190d39e0941c6f89.png",
     "index.html": "/songfy/index.html",
-    "main.fabfe2f8.css.map": "/songfy/static/css/main.fabfe2f8.css.map",
-    "main.adfe6edd.js.map": "/songfy/static/js/main.adfe6edd.js.map",
+    "main.7801f17e.css.map": "/songfy/static/css/main.7801f17e.css.map",
+    "main.76b59d60.js.map": "/songfy/static/js/main.76b59d60.js.map",
     "453.ee457176.chunk.js.map": "/songfy/static/js/453.ee457176.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.fabfe2f8.css",
-    "static/js/main.adfe6edd.js"
+    "static/css/main.7801f17e.css",
+    "static/js/main.76b59d60.js"
   ]
 }
