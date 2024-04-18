@@ -1,6 +1,6 @@
 function LoggedInHome(){
     return (
-        <div>cu</div>
+        <div>teste</div>
     )
 }
 
