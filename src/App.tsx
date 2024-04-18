@@ -22,7 +22,7 @@ function App() {
   const [user, setUser] = useState<User | null>(null);
   return (
     <LoginContext.Provider
-      value={{ loggedIn, users, user, setUser, idSong, setIdSong }}
+      value={{ loggedIn, users, user, setUser, idSong, setIdSong, setLoggedIn }}
     >
       <Router>
         <Routes>
