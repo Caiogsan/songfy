@@ -6,7 +6,7 @@ import { User } from "../helpers/LoginContext";
 import { IoIosArrowBack } from "react-icons/io";
 
 const Register = (): JSX.Element => {
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useState<string>("");
   const { users } = useContext(LoginContext)
   const [formData, setFormData] = useState<User>({
     email: "",
